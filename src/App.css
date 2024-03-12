@@ -5,10 +5,75 @@
 }
 .Contenedor-Agregar {
   height: 250px;
-  width: 1500px;
+  width: 1000px;
+  margin: 5px;
   margin-left: 16px;
   border: 0;
   border-radius: 999px;
   padding: 6px 16px;
   font-weight: bold;
+  display: flex;
+  flex-wrap: wrap;
+}
+form {
+  width: 1000px;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 5px;
+}
+.Contenedor-Texto {
+  display: flex;
+  flex-direction: column;
+  width: 330px;
+
+  margin-right: 20px;
+}
+.Contenedor-Fechas {
+  display: flex;
+  flex-direction: column;
+  width: 330px;
+  margin-right: 20px;
+}
+.Contenedor-Busqueda {
+  display: inline-block;
+  width: 330px;
+  height: 100px;
+  padding-top: 20px;
+  padding-right: 30px;
+  padding-bottom: 50px;
+  padding-left: 80px;
+  margin-right: 20px;
+  align-items: center;
+}
+
+/* Para evitar que el último elemento tenga margen derecho */
+.Contenedor-Texto:last-child,
+.Contenedor-Fechas:last-child,
+.Contenedor-Busqueda:last-child {
+  margin-right: 0;
+}
+
+table {
+    width: 89%; /* Ancho de la tabla */
+    margin: 0 auto; /* Centro la tabla horizontalmente */
+    border-collapse: collapse; 
+
+thead {
+  background-color: #f2f2f2; /* Color de fondo del encabezado */
+}
+
+th,
+td {
+  padding: 8px; /* Espaciado interno de las celdas */
+  border: 1px solid #ddd; /* Borde de las celdas */
+  text-align: left; /* Alineación del texto a la izquierda */
+}
+
+th {
+  background-color: cadetblue; /* Color de fondo de las celdas del encabezado */
+  color: white; /* Color del texto del encabezado */
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f2f2f2; /* Color de fondo de las filas pares del cuerpo */
 }
