@@ -1,24 +1,50 @@
-
+import { useState } from "react";
 export function AgregarDatos() {
+
+  const [datosForm, setDatosForm] = useState({
+    titulo: '',
+    descripcion: '',
+    fechaInicio: '',
+    fechaFin: ''
+  });
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setDatosForm({ ...datosForm, [name]: value });
+    e.target.value = '';
+    
+  };
+
+  const guardarTarea = () =>{
+    console.log('Tarea:', {datosForm})
+    setDatosForm({
+      titulo: '',
+      descripcion: '',
+      fechaInicio: '',
+      fechaFin: ''
+    });
+    console.log('Datos clean')
+  }
+
   return (
     <div>
       <form>
         <div className="Contenedor-Texto">
           <label>Título de la Nota:</label>
-          <input name="titulo" />
+          <input onChange={handleChange} value={datosForm.titulo}  name="titulo" />
           <label>Descripción:</label>
-          <input name="descripcion" />
+          <input onChange={handleChange} value={datosForm.descripcion} name="descripcion" />
         </div>
         <div className="Contenedor-Fechas">
           <label>Fecha Inicio:</label>
-          <input type="date" id="fecha" name="fecha" />
+          <input onChange={handleChange} value={datosForm.fechaInicio} type="date" name="fechaInicio" />
           <label>Fecha Fin:</label>
-          <input type="date" id="fecha2" name="fecha" />
+          <input onChange={handleChange} value={datosForm.fechaFin} type="date" name="fechaFin" />
         </div>
-        <div className="Contenedor-Busqueda">
-          <button type="submit">Search</button>
-        </div>
+        
       </form>
+      <div className="Contenedor-Busqueda">
+          <button onClick={guardarTarea} >Guardar</button>
+        </div>
     </div>
   );
 }

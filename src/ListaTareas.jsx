@@ -1,4 +1,7 @@
+import { useState } from "react";
+import { AgregarDatos } from "./AgregarDatos";
 export function Lista() {
+  
   return (
     <table>
       <thead>
