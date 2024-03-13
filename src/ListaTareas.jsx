@@ -1,7 +1,4 @@
-import { useState } from "react";
-import { AgregarDatos } from "./AgregarDatos";
-export function Lista() {
-  
+export function Lista({ datosForm }) {
   return (
     <table>
       <thead>
@@ -13,15 +10,7 @@ export function Lista() {
           <th>Fecha Fin</th>
         </tr>
       </thead>
-      <tbody>
-        <tr>
-          <td>Limpiar casa</td>
-          <td>Barrer</td>
-          <td>Incompleto</td>
-          <td>12/03/2024</td>
-          <td>13/03/2024</td>
-        </tr>
-      </tbody>
+      <tbody></tbody>
     </table>
   );
 }

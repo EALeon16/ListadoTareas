@@ -8,9 +8,7 @@ export function App() {
       <div className="Contenedor-Agregar">
         <AgregarDatos />
       </div>
-      <div className="Contenedor-Lista">
-        <Lista />
-      </div>
+      <div className="Contenedor-Lista"></div>
     </div>
   );
 }
