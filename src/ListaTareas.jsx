@@ -1,4 +1,6 @@
+import { AgregarDatos } from "./AgregarDatos";
 export function Lista({ datosForm }) {
+  console.log("dentro de la lista:", datosForm);
   return (
     <table>
       <thead>
@@ -10,7 +12,16 @@ export function Lista({ datosForm }) {
           <th>Fecha Fin</th>
         </tr>
       </thead>
-      <tbody></tbody>
+      <tbody>
+        {datosForm.map((datoform) => (
+          <tr>
+            <td>{datoform.titulo}</td>
+            <td>{datoform.descripcion}</td>
+            <td>{datoform.fechaInicio}</td>
+            <td>{datoform.fechaFin}</td>
+          </tr>
+        ))}
+      </tbody>
     </table>
   );
 }

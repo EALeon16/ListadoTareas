@@ -1,20 +1,22 @@
 import { useState } from "react";
 import { Lista } from "./ListaTareas.jsx";
-export function AgregarDatos() {
+export function AgregarDatos({ agregarTarea }) {
   const [datosForm, setDatosForm] = useState({
     titulo: "",
     descripcion: "",
     fechaInicio: "",
     fechaFin: "",
   });
-
+  const [listaB, serListaB] = useState([]); //valores
   const handleChange = (e) => {
     const { name, value } = e.target;
     setDatosForm({ ...datosForm, [name]: value });
-    e.target.value = "";
   };
 
   const guardarTarea = () => {
+    serListaB((value) => [...value, datosForm]);
+    //agregarTarea(datosForm);
+    // agregarTarea(nuevaTarea);
     console.log("Tarea:", { datosForm });
     setDatosForm({
       titulo: "",
@@ -62,7 +64,7 @@ export function AgregarDatos() {
       <div className="Contenedor-Busqueda">
         <button onClick={guardarTarea}>Guardar</button>
       </div>
-      <Lista datosForm={datosForm}></Lista>
+      <Lista datosForm={listaB}></Lista>
     </div>
   );
 }
